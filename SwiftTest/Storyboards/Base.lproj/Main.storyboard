@@ -21,7 +21,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="BEx-3l-ZfF" kind="show" id="gDb-Rl-qaH"/>
+                                    <segue destination="BEx-3l-ZfF" kind="presentation" modalPresentationStyle="fullScreen" id="gDb-Rl-qaH"/>
                                 </connections>
                             </button>
                         </subviews>
