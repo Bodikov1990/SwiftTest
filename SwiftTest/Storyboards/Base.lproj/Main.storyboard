@@ -35,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="57"/>
+            <point key="canvasLocation" x="28.985507246376812" y="56.919642857142854"/>
         </scene>
         <!--TabbarStoryboard-->
         <scene sceneID="3ut-2S-2Wl">
