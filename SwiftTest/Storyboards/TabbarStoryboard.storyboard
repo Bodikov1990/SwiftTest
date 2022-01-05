@@ -117,16 +117,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-Qf-Xa7">
-                                <rect key="frame" x="0.0" y="91" width="320" height="4"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="4"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопросы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-v4-UkR">
-                                <rect key="frame" x="20" y="125" width="280" height="24"/>
+                                <rect key="frame" x="20" y="78" width="280" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="e2b-kb-ylE">
-                                <rect key="frame" x="16" y="274" width="288" height="169"/>
+                                <rect key="frame" x="16" y="227" width="288" height="169"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WJ-XO-gFb">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="31"/>
@@ -177,7 +177,7 @@
                             <constraint firstItem="ucg-Qf-Xa7" firstAttribute="top" secondItem="tgq-Xq-vjG" secondAttribute="top" id="wP2-Q6-wZ8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="Ntx-gL-5wL"/>
+                    <navigationItem key="navigationItem" title="Вопрос №" largeTitleDisplayMode="never" id="Ntx-gL-5wL"/>
                     <connections>
                         <outlet property="buttonA" destination="9WJ-XO-gFb" id="Mpc-B3-5WS"/>
                         <outlet property="buttonB" destination="ldS-zL-Jeh" id="XhW-R1-BrN"/>

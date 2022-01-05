@@ -9,7 +9,7 @@ import UIKit
 
 class MainTabbarViewController: UITabBarController {
 
-    var quizes = Question.getQuiz()
+    var quizes = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,9 @@ class MainTabbarViewController: UITabBarController {
                 for controller in viewControllers {
                     if let quizesNavigationVC = controller as? UINavigationController {
                         if let quizTBVC = quizesNavigationVC.topViewController as? QuizTableViewController {
-                            quizTBVC.quizes = quizes
+//                            quizTBVC.quizes = quizes
                         } else if let resultsTBVC = quizesNavigationVC.topViewController as? ResultsTableViewController {
-                            resultsTBVC.quizes = quizes
+//                            resultsTBVC.quizes = quizes
                         }
                     }
                 }

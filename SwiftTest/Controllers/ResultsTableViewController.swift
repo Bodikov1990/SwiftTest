@@ -22,9 +22,9 @@ class ResultsTableViewController: UITableViewController {
         quizes.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        "\(quizes[section].nameOfBlock)"
-    }
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+////        "\(quizes[section].nameOfSection)"
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         quizes.count
@@ -38,10 +38,10 @@ class ResultsTableViewController: UITableViewController {
         
         var content = cell.defaultContentConfiguration()
         
-        switch indexPath.row {
-        case 0: content.text = quiz.nameOfQuiz
-        default: content.text = quiz.nameOfBlock
-        }
+//        switch indexPath.row {
+//        case 0: content.text = quiz.nameOfQuiz
+//        default: content.text = quiz.nameOfSection
+//        }
         
         cell.contentConfiguration = content
 
