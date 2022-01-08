@@ -13,22 +13,22 @@ class MainTabbarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTabBar()
+//        setupTabBar()
     }
     
-    private func setupTabBar() {
-            
-                guard let viewControllers = self.viewControllers else { return }
-                for controller in viewControllers {
-                    if let quizesNavigationVC = controller as? UINavigationController {
-                        if let quizTBVC = quizesNavigationVC.topViewController as? QuizTableViewController {
-//                            quizTBVC.quizes = quizes
-                        } else if let resultsTBVC = quizesNavigationVC.topViewController as? ResultsTableViewController {
-//                            resultsTBVC.quizes = quizes
-                        }
-                    }
-                }
-            }
+//    private func setupTabBar() {
+//
+//                guard let viewControllers = self.viewControllers else { return }
+//                for controller in viewControllers {
+//                    if let quizesNavigationVC = controller as? UINavigationController {
+//                        if let quizTBVC = quizesNavigationVC.topViewController as? QuizTableViewController {
+////                            quizTBVC.quizes = quizes
+//                        } else if let resultsTBVC = quizesNavigationVC.topViewController as? ResultsTableViewController {
+////                            resultsTBVC.quizes = quizes
+//                        }
+//                    }
+//                }
+//            }
     
 }
 

@@ -9,7 +9,7 @@ import UIKit
 
 class ResultsTableViewController: UITableViewController {
 
-    var quizes: [Question] = []
+    var quizes: [Quizes] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +33,17 @@ class ResultsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultVC", for: indexPath)
-        let quiz = quizes[indexPath.row]
+//        let quiz = quizes[indexPath.row]
 
         
-        var content = cell.defaultContentConfiguration()
+//        var content = cell.defaultContentConfiguration()
         
 //        switch indexPath.row {
 //        case 0: content.text = quiz.nameOfQuiz
 //        default: content.text = quiz.nameOfSection
 //        }
         
-        cell.contentConfiguration = content
+//        cell.contentConfiguration = content
 
         return cell
     }

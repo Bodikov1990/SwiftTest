@@ -119,7 +119,7 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-Qf-Xa7">
                                 <rect key="frame" x="0.0" y="44" width="320" height="4"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопросы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-v4-UkR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопросы" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-v4-UkR">
                                 <rect key="frame" x="20" y="78" width="280" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -183,6 +183,7 @@
                         <outlet property="buttonB" destination="ldS-zL-Jeh" id="XhW-R1-BrN"/>
                         <outlet property="buttonC" destination="2Eb-Ba-qbO" id="6Li-bf-acX"/>
                         <outlet property="buttonD" destination="IiW-Jo-HWn" id="G8n-iZ-j8d"/>
+                        <outlet property="progressBar" destination="ucg-Qf-Xa7" id="jXv-Wr-mU2"/>
                         <outlet property="questionLabel" destination="aAa-v4-UkR" id="1xH-EE-TuG"/>
                         <segue destination="jS3-XW-D2D" kind="presentation" identifier="resultsVC" modalPresentationStyle="fullScreen" id="18e-2L-4xY"/>
                     </connections>

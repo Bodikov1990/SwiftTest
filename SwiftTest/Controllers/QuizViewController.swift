@@ -9,6 +9,7 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet weak var buttonA: UIButton!
@@ -16,60 +17,62 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var buttonC: UIButton!
     @IBOutlet weak var buttonD: UIButton!
     
-    var allQuestions = DataManager()
+    var rows: Rows!
+    var questions: [Questions] = []
+    
+    //MARK: - Old methods
     var questionNumber: Int = 0
     var score: Int = 0
     var selectedAnswer = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getQuiestionsInRows()
         updateQuestion()
     }
     
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == selectedAnswer {
-//            ProgressHUD.showSuccess("Correct")
             score += 1
-            
-        }else{
-//            ProgressHUD.showError("Incorrect")
-            
-            
         }
-        
         questionNumber += 1
         updateQuestion()
     }
     
-    private func updateQuestion() {
-        if questionNumber <= allQuestions.list.count - 1{
-//            flagView.image = UIImage(named:(allQuestions.list[questionNumber].questionImage))
-            questionLabel.text = allQuestions.list[questionNumber].question
-            buttonA.setTitle(allQuestions.list[questionNumber].optionA, for: UIControl.State.normal)
-            buttonB.setTitle(allQuestions.list[questionNumber].optionB, for: UIControl.State.normal)
-            buttonC.setTitle(allQuestions.list[questionNumber].optionC, for: UIControl.State.normal)
-            buttonD.setTitle(allQuestions.list[questionNumber].optionD, for: UIControl.State.normal)
-            selectedAnswer = allQuestions.list[questionNumber].correctAnswer
+    func updateQuestion(){
+        if questionNumber <= questions.count - 1{
+            
+            questionLabel.text = questions[questionNumber].question
+            buttonA.setTitle(questions[questionNumber].optionA, for: .normal)
+            buttonB.setTitle(questions[questionNumber].optionB, for: .normal)
+            buttonC.setTitle(questions[questionNumber].optionC, for: .normal)
+            buttonD.setTitle(questions[questionNumber].optionD, for: .normal)
+            selectedAnswer = questions[questionNumber].correctAnswer
             updateUI()
             
         }else {
-            let alert = UIAlertController(title: "Awesome", message: "End of Quiz. Do you want to start over?", preferredStyle: .alert)
-            let restartAction = UIAlertAction(title: "Restart", style: .default, handler: {action in self.restartQuiz()})
+            let alert = UIAlertController(title: "Круто", message: "Хотите повторить?", preferredStyle: .alert)
+            let restartAction = UIAlertAction(title: "Рестарт", style: .default, handler: {action in self.restartQuiz()})
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
         }
     }
     
     func updateUI(){
-        
-        title = "Вопрос№ \(questionNumber + 1) из \(allQuestions.list.count)"
- 
+        title = "Вопрос № \(questionNumber + 1) из \(questions.count)"
+        let tottalProgress = Float(questionNumber) / Float(questions.count)
+        progressBar.setProgress(tottalProgress, animated: true)
     }
     
     func restartQuiz(){
+        score = 0
         questionNumber = 0
         updateQuestion()
-        
     }
-
+    
+    private func getQuiestionsInRows() {
+        for question in rows.questions {
+            questions.append(question)
+        }
+    }
 }

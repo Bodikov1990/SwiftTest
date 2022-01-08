@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1248B8E5278A126C0071B064 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1248B8E4278A126C0071B064 /* DataManager.swift */; };
 		12B29C3427849E570052370B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B29C3327849E570052370B /* Question.swift */; };
 		12B29C362784B3150052370B /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B29C352784B3150052370B /* MainTabbarViewController.swift */; };
 		12B29C382784B39F0052370B /* QuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B29C372784B39F0052370B /* QuizTableViewController.swift */; };
@@ -19,10 +20,10 @@
 		12B4082C2783177B00A55674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B4082B2783177B00A55674 /* Assets.xcassets */; };
 		12B4082F2783177B00A55674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12B4082D2783177B00A55674 /* LaunchScreen.storyboard */; };
 		12B4083B2783182200A55674 /* TabbarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12B4083A2783182200A55674 /* TabbarStoryboard.storyboard */; };
-		12B408442783287E00A55674 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B408432783287E00A55674 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1248B8E4278A126C0071B064 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		12B29C3327849E570052370B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		12B29C352784B3150052370B /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		12B29C372784B39F0052370B /* QuizTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		12B4082E2783177B00A55674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12B408302783177B00A55674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12B4083A2783182200A55674 /* TabbarStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabbarStoryboard.storyboard; sourceTree = "<group>"; };
-		12B408432783287E00A55674 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 		12B408422783286100A55674 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				12B408432783287E00A55674 /* DataManager.swift */,
+				1248B8E4278A126C0071B064 /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,10 +212,10 @@
 				12B29C382784B39F0052370B /* QuizTableViewController.swift in Sources */,
 				12B29C3427849E570052370B /* Question.swift in Sources */,
 				12B408272783177800A55674 /* LoginViewController.swift in Sources */,
-				12B408442783287E00A55674 /* DataManager.swift in Sources */,
 				12B29C362784B3150052370B /* MainTabbarViewController.swift in Sources */,
 				12B29C3E2784BAB60052370B /* QuizViewController.swift in Sources */,
 				12B408232783177800A55674 /* AppDelegate.swift in Sources */,
+				1248B8E5278A126C0071B064 /* DataManager.swift in Sources */,
 				12B408252783177800A55674 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
