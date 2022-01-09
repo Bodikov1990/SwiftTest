@@ -74,6 +74,7 @@ class QuizTableViewController: UITableViewController {
             guard let quizVC = segue.destination as? QuizViewController else { return }
             
             for quizes in allQuestions {
+                
                 for sectionName in quizes.sections {
                     quizVC.rows = sectionName.rows[indexPath.row]
                 }

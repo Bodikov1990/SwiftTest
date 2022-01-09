@@ -85,15 +85,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quizVC" id="goR-n7-ApO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="quizVC" id="goR-n7-ApO">
                                 <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="goR-n7-ApO" id="ZkP-vr-peA">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="295.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="0fd-mb-GeR" kind="show" id="EeK-HC-5wu"/>
+                                    <segue destination="0fd-mb-GeR" kind="push" id="EeK-HC-5wu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -102,7 +102,7 @@
                             <outlet property="delegate" destination="8bD-TW-8SQ" id="pi6-1t-lzR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Zl0-Cc-BgQ"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Zl0-Cc-BgQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUG-6y-pfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,33 +187,87 @@
                         <outlet property="buttonD" destination="IiW-Jo-HWn" id="G8n-iZ-j8d"/>
                         <outlet property="progressBar" destination="ucg-Qf-Xa7" id="jXv-Wr-mU2"/>
                         <outlet property="questionLabel" destination="aAa-v4-UkR" id="1xH-EE-TuG"/>
-                        <segue destination="jS3-XW-D2D" kind="presentation" identifier="resultsVC" modalPresentationStyle="fullScreen" id="18e-2L-4xY"/>
+                        <segue destination="jS3-XW-D2D" kind="presentation" identifier="resultsVC" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="18e-2L-4xY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdj-FR-tzj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2606" y="-433"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="qVm-xx-1ZQ">
             <objects>
-                <viewController id="jS3-XW-D2D" sceneMemberID="viewController">
+                <viewController id="jS3-XW-D2D" customClass="ResultViewController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lsQ-Qx-HJu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwS-El-zkk">
+                                <rect key="frame" x="20" y="80" width="280" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxw-bK-6Kw">
+                                <rect key="frame" x="20" y="300" width="280" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Рестарт"/>
+                                <connections>
+                                    <action selector="restartAction" destination="jS3-XW-D2D" eventType="touchUpInside" id="LxW-3S-XPx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0J-kr-Oh3">
+                                <rect key="frame" x="20" y="361" width="280" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Назад"/>
+                                <connections>
+                                    <action selector="backActiona" destination="jS3-XW-D2D" eventType="touchUpInside" id="Pom-P7-Yjv"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="90D-aW-iQz">
+                                <rect key="frame" x="139.5" y="150.5" width="41.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eda-DT-765">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VHh-7b-0HG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lwS-El-zkk" firstAttribute="leading" secondItem="VHh-7b-0HG" secondAttribute="leading" constant="20" id="0lJ-E0-xGk"/>
+                            <constraint firstItem="VHh-7b-0HG" firstAttribute="trailing" secondItem="a0J-kr-Oh3" secondAttribute="trailing" constant="20" id="87f-fH-22L"/>
+                            <constraint firstItem="a0J-kr-Oh3" firstAttribute="leading" secondItem="VHh-7b-0HG" secondAttribute="leading" constant="20" id="8r1-u7-iIR"/>
+                            <constraint firstItem="90D-aW-iQz" firstAttribute="centerX" secondItem="lsQ-Qx-HJu" secondAttribute="centerX" id="ELW-9q-S2n"/>
+                            <constraint firstItem="VHh-7b-0HG" firstAttribute="trailing" secondItem="lwS-El-zkk" secondAttribute="trailing" constant="20" id="EkZ-Ov-Rwu"/>
+                            <constraint firstItem="hxw-bK-6Kw" firstAttribute="top" secondItem="lsQ-Qx-HJu" secondAttribute="topMargin" constant="300" id="Uiq-SP-0GB"/>
+                            <constraint firstItem="a0J-kr-Oh3" firstAttribute="top" secondItem="hxw-bK-6Kw" secondAttribute="bottom" constant="30" id="fzo-Di-a2f"/>
+                            <constraint firstItem="lwS-El-zkk" firstAttribute="top" secondItem="VHh-7b-0HG" secondAttribute="top" constant="80" id="iAr-Yc-Dnh"/>
+                            <constraint firstItem="hxw-bK-6Kw" firstAttribute="leading" secondItem="VHh-7b-0HG" secondAttribute="leading" constant="20" id="jhe-Nz-dGX"/>
+                            <constraint firstItem="90D-aW-iQz" firstAttribute="top" secondItem="lwS-El-zkk" secondAttribute="bottom" constant="50" id="pZr-N8-RRH"/>
+                            <constraint firstItem="VHh-7b-0HG" firstAttribute="trailing" secondItem="hxw-bK-6Kw" secondAttribute="trailing" constant="20" id="rcY-85-svh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="a0J-kr-Oh3" id="Ow8-Yb-C2j"/>
+                        <outlet property="quizLabel" destination="lwS-El-zkk" id="pS3-Ym-1no"/>
+                        <outlet property="restartButton" destination="hxw-bK-6Kw" id="ZdV-dT-03u"/>
+                        <outlet property="resultLabel" destination="Eda-DT-765" id="K77-pF-0Oo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opo-hW-Vs9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3369" y="-433"/>
         </scene>
-        <!--Item-->
+        <!--Quiz-->
         <scene sceneID="SCW-CK-3Bc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hx9-mR-zsE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="star.fill" catalog="system" id="XkD-GL-9ok"/>
+                    <tabBarItem key="tabBarItem" title="Quiz" image="questionmark" catalog="system" id="XkD-GL-9ok"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="x9p-mJ-EJP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
@@ -228,11 +282,11 @@
             </objects>
             <point key="canvasLocation" x="894" y="-433"/>
         </scene>
-        <!--Item-->
+        <!--Results-->
         <scene sceneID="6DX-Qt-C7z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zMl-3t-SrK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="eY4-HY-qO9"/>
+                    <tabBarItem key="tabBarItem" title="Results" image="checkmark.seal" catalog="system" id="eY4-HY-qO9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Hn-I6-3Zh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -247,7 +301,7 @@
             </objects>
             <point key="canvasLocation" x="894.20289855072474" y="261.83035714285711"/>
         </scene>
-        <!--Item-->
+        <!--User-->
         <scene sceneID="zYu-45-8qs">
             <objects>
                 <viewController id="UKE-Kv-V6l" sceneMemberID="viewController">
@@ -257,7 +311,7 @@
                         <viewLayoutGuide key="safeArea" id="hFf-ob-byd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="person.fill" catalog="system" id="fu1-Jh-M09"/>
+                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" id="fu1-Jh-M09"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOQ-XI-LwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,8 +319,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.seal" catalog="system" width="128" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="questionmark" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -27,7 +27,15 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getQuiestionsInRows()
         updateQuestion()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let resultVC = segue.destination as? ResultViewController else { return }
+        resultVC.quiz = rows.rows
+        resultVC.score = score
+        resultVC.questionNumber = questionNumber
     }
     
     @IBAction func answerPressed(_ sender: UIButton) {
@@ -39,8 +47,6 @@ class QuizViewController: UIViewController {
     }
     
     private func updateQuestion(){
-        getQuiestionsInRows()
-        
         if questionNumber <= questions.count - 1{
             
             questionLabel.text = questions[questionNumber].question
@@ -52,10 +58,7 @@ class QuizViewController: UIViewController {
             updateUI()
             
         }else {
-            let alert = UIAlertController(title: "Круто", message: "Хотите повторить?", preferredStyle: .alert)
-            let restartAction = UIAlertAction(title: "Рестарт", style: .default, handler: {action in self.restartQuiz()})
-            alert.addAction(restartAction)
-            present(alert, animated: true, completion: nil)
+            performSegue(withIdentifier: "resultsVC", sender: nil)
         }
     }
     
@@ -64,6 +67,16 @@ class QuizViewController: UIViewController {
         let tottalProgress = Float(questionNumber) / Float(questions.count)
         progressBar.setProgress(tottalProgress, animated: true)
     }
+
+}
+
+extension QuizViewController {
+//    private func alerts() {
+//        let alert = UIAlertController(title: "Круто", message: "Хотите повторить?", preferredStyle: .alert)
+//        let restartAction = UIAlertAction(title: "Рестарт", style: .default, handler: {action in self.restartQuiz()})
+//        alert.addAction(restartAction)
+//        present(alert, animated: true, completion: nil)
+//    }
     
     private func restartQuiz(){
         score = 0
@@ -77,3 +90,5 @@ class QuizViewController: UIViewController {
         }
     }
 }
+
+

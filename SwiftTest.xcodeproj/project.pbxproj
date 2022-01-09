@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12361495278B3FCC00B7DDB1 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12361494278B3FCC00B7DDB1 /* ResultViewController.swift */; };
 		1248B8E5278A126C0071B064 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1248B8E4278A126C0071B064 /* DataManager.swift */; };
 		12B29C3427849E570052370B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B29C3327849E570052370B /* Question.swift */; };
 		12B29C362784B3150052370B /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B29C352784B3150052370B /* MainTabbarViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12361494278B3FCC00B7DDB1 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		1248B8E4278A126C0071B064 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		12B29C3327849E570052370B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		12B29C352784B3150052370B /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				12B29C372784B39F0052370B /* QuizTableViewController.swift */,
 				12B29C392784B3B50052370B /* ResultsTableViewController.swift */,
 				12B29C3D2784BAB60052370B /* QuizViewController.swift */,
+				12361494278B3FCC00B7DDB1 /* ResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				12B29C3427849E570052370B /* Question.swift in Sources */,
 				12B408272783177800A55674 /* LoginViewController.swift in Sources */,
 				12B29C362784B3150052370B /* MainTabbarViewController.swift in Sources */,
+				12361495278B3FCC00B7DDB1 /* ResultViewController.swift in Sources */,
 				12B29C3E2784BAB60052370B /* QuizViewController.swift in Sources */,
 				12B408232783177800A55674 /* AppDelegate.swift in Sources */,
 				1248B8E5278A126C0071B064 /* DataManager.swift in Sources */,
