@@ -21,13 +21,12 @@ class QuizViewController: UIViewController {
     var questions: [Questions] = []
     
     //MARK: - Old methods
-    var questionNumber: Int = 0
-    var score: Int = 0
-    var selectedAnswer = 0
+    private var questionNumber: Int = 0
+    private var score: Int = 0
+    private var selectedAnswer = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getQuiestionsInRows()
         updateQuestion()
     }
     
@@ -39,7 +38,9 @@ class QuizViewController: UIViewController {
         updateQuestion()
     }
     
-    func updateQuestion(){
+    private func updateQuestion(){
+        getQuiestionsInRows()
+        
         if questionNumber <= questions.count - 1{
             
             questionLabel.text = questions[questionNumber].question
@@ -58,13 +59,13 @@ class QuizViewController: UIViewController {
         }
     }
     
-    func updateUI(){
+    private func updateUI(){
         title = "Вопрос № \(questionNumber + 1) из \(questions.count)"
         let tottalProgress = Float(questionNumber) / Float(questions.count)
         progressBar.setProgress(tottalProgress, animated: true)
     }
     
-    func restartQuiz(){
+    private func restartQuiz(){
         score = 0
         questionNumber = 0
         updateQuestion()

@@ -8,22 +8,18 @@
 import UIKit
 
 class QuizTableViewController: UITableViewController {
-
-    var allQuestions = Quizes.getQuestions()
-
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
+    var allQuestions = Quizes.getQuestions()
+    
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         var sectionCounts: Int!
         
-        for sections in allQuestions {
-            sectionCounts = sections.sections.count
+        for nameOfSections in allQuestions {
+            sectionCounts = nameOfSections.sections.count
+            
         }
         
         return sectionCounts
@@ -33,10 +29,7 @@ class QuizTableViewController: UITableViewController {
         var sectionName: String!
         
         for quizes in allQuestions {
-            for sections in quizes.sections {
-                sectionName = sections.sections
-            }
-                    
+            sectionName = quizes.sections[section].sections
         }
         
         return sectionName
@@ -46,34 +39,33 @@ class QuizTableViewController: UITableViewController {
         var rowCounts: Int!
         
         for sections in allQuestions {
-            for secton in sections.sections {
-                rowCounts = secton.rows.count
+            for rows in sections.sections {
+                rowCounts = rows.rows.count
             }
         }
         
         return rowCounts
-
+        
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "quizVC", for: indexPath)
         
-        var quiz: String!
+        var quiz: Rows!
         
         for quizes in allQuestions {
             for sections in quizes.sections {
-                quiz = sections.rows[indexPath.row].rows
+                quiz = sections.rows[indexPath.row]
+                
             }
         }
-
-        var content = cell.defaultContentConfiguration()
-
-        content.text = quiz
         
-
+        var content = cell.defaultContentConfiguration()
+        
+        content.text = quiz.rows
+        
         cell.contentConfiguration = content
-
+        
         return cell
     }
     

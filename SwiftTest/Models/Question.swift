@@ -9,14 +9,31 @@ import Foundation
 
 struct Quizes {
     let sections: [Sections]
-    
+}
+
+struct Sections {
+    let sections: String
+    let rows: [Rows]
+}
+
+struct Rows {
+    let rows: String
+    let questions: [Questions]
+}
+
+struct Questions {
+    var question: String
+    var optionA: String
+    var optionB: String
+    var optionC: String
+    var optionD: String
+    var correctAnswer: Int
+}
+
+extension Quizes {
     static func getQuestions() -> [Quizes] {
-        [Quizes(
-            sections: [Sections(
-                sections: "Основы Swift",
-                rows: [Rows(
-                    rows: "Синтаксис Swift",
-                    questions: [Questions(question: "Можем ли мы менять значение переменных?",
+        [Quizes(sections: [Sections(sections: "Основы Swift", rows: [Rows(rows: "Синтаксис Swift", questions:
+                               [Questions(question: "Можем ли мы менять значение переменных?",
                                           optionA: "A. Ну да, но вообще-то нет",
                                           optionB: "B. Нет",
                                           optionC: "С. Да",
@@ -401,27 +418,72 @@ struct Quizes {
                                           optionC: "",
                                           optionD: "",
                                           correctAnswer: 2)
+                            ]),
+                       Rows(rows: "Перечисления и структуры",
+                            questions:[
+                                Questions(question: "Какими ключевыми словами обозначаются классы и структуры в коде?",
+                                          optionA: "A. classes и struct",
+                                          optionB: "B. class и struct",
+                                          optionC: "C. class и structures",
+                                          optionD: "D. classes и structures",
+                                          correctAnswer: 2),
+                                Questions(question: "В каком стиле следует писать имена свойств и методов в Swift?",
+                                          optionA: "A. lowerCamelCase",
+                                          optionB: "B. На свое усмотрение",
+                                          optionC: "C. UpperCamelCase",
+                                          optionD: "",
+                                          correctAnswer: 1),
+                                Questions(question: "Что из этого относится к типу значения?",
+                                          optionA: "A. Структуры",
+                                          optionB: "B. Структуры и классы",
+                                          optionC: "C. Классы",
+                                          optionD: "",
+                                          correctAnswer: 1),
+                                Questions(question: "Swift без употребления ключевого свойства self не поймет, что вы ссылаетесь на свойство или метод текущего экземпляра, так ли это?",
+                                          optionA: "A. Нет",
+                                          optionB: "B. Да",
+                                          optionC: "",
+                                          optionD: "",
+//                                          optionE: "E. C. var array = [String] ()",
+                                          correctAnswer: 2),
+                                Questions(question: "Как называется экземпляр класса в Swift?",
+                                          optionA: "A. Субъект",
+                                          optionB: "B. Структура",
+                                          optionC: "C. Объект",
+                                          optionD: "D. Таргет",
+                                          correctAnswer: 3),
+                                Questions(question: "Экземпляры классов и структур (если имеют инициализатор без параметров) можно создать через этот синтаксис",
+                                          optionA: "A. let objectName = ClassName[]",
+                                          optionB: "B. let objectName: ClassName()",
+                                          optionC: "C. let objectName = ClassName()",
+                                          optionD: "D. let objectName = (ClassName)()",
+                                          correctAnswer: 3),
+                                Questions(question: "Чем отличаются методы от функций?",
+                                          optionA: "A. Функции привязаны к типам",
+                                          optionB: "B. Методы глобальнее функций",
+                                          optionC: "C. Методы пишутся с заглавной буквы",
+                                          optionD: "D. Методы связаны с типами",
+                                          correctAnswer: 4),
+                                Questions(question: "Какой стиль написания составных слов вы должны использовать в написании имен классов и структур?",
+                                          optionA: "A. Зависит от команды",
+                                          optionB: "B. UpperCamelCase",
+                                          optionC: "C. lowerCamelCase",
+                                          optionD: "D. Без разницы",
+                                          correctAnswer: 2),
+                                Questions(question: "Что относится к ссылочному типу?",
+                                          optionA: "A. Структуры",
+                                          optionB: "B. Классы",
+                                          optionC: "C. Свойства",
+                                          optionD: "",
+                                          correctAnswer: 2),
+                                Questions(question: "Что рациональнее использовать для хранения данных?",
+                                          optionA: "A. Данные хранить нельзя",
+                                          optionB: "B. Структуры",
+                                          optionC: "C. Классы",
+                                          optionD: "",
+                                          correctAnswer: 2)
                             ])
                        ])])]
          
      }
-}
-
-struct Sections {
-    let sections: String
-    let rows: [Rows]
-}
-
-struct Rows {
-    let rows: String
-    let questions: [Questions]
-}
-
-struct Questions {
-    var question: String
-    var optionA: String
-    var optionB: String
-    var optionC: String
-    var optionD: String
-    var correctAnswer: Int
 }
