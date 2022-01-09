@@ -119,17 +119,19 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-Qf-Xa7">
                                 <rect key="frame" x="0.0" y="44" width="320" height="4"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопросы" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-v4-UkR">
-                                <rect key="frame" x="20" y="78" width="280" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-v4-UkR">
+                                <rect key="frame" x="20" y="78" width="280" height="119.5"/>
+                                <string key="text">Экземпляры классов и структур (если имеют инициализатор без параметров) можно создать 
+Через этот синтаксис</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="e2b-kb-ylE">
-                                <rect key="frame" x="16" y="227" width="288" height="169"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="e2b-kb-ylE">
+                                <rect key="frame" x="16" y="274" width="288" height="169"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WJ-XO-gFb">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
                                         <connections>
@@ -137,7 +139,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldS-zL-Jeh">
-                                        <rect key="frame" x="0.0" y="46" width="288" height="31"/>
+                                        <rect key="frame" x="0.0" y="46" width="86" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
                                         <connections>
@@ -145,7 +147,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Eb-Ba-qbO">
-                                        <rect key="frame" x="0.0" y="92" width="288" height="31"/>
+                                        <rect key="frame" x="0.0" y="92" width="86" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
                                         <connections>
@@ -153,7 +155,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiW-Jo-HWn">
-                                        <rect key="frame" x="0.0" y="138" width="288" height="31"/>
+                                        <rect key="frame" x="0.0" y="138" width="86" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
                                         <connections>
@@ -168,10 +170,10 @@
                         <constraints>
                             <constraint firstItem="e2b-kb-ylE" firstAttribute="leading" secondItem="tgq-Xq-vjG" secondAttribute="leading" constant="16" id="10I-Ym-ro8"/>
                             <constraint firstItem="tgq-Xq-vjG" firstAttribute="trailing" secondItem="e2b-kb-ylE" secondAttribute="trailing" constant="16" id="2xn-sL-NmS"/>
-                            <constraint firstItem="e2b-kb-ylE" firstAttribute="top" secondItem="aAa-v4-UkR" secondAttribute="bottom" constant="125" id="4Wr-D4-sYX"/>
                             <constraint firstItem="tgq-Xq-vjG" firstAttribute="trailing" secondItem="aAa-v4-UkR" secondAttribute="trailing" constant="20" id="92p-F6-tVP"/>
                             <constraint firstItem="tgq-Xq-vjG" firstAttribute="trailing" secondItem="ucg-Qf-Xa7" secondAttribute="trailing" id="QDr-d7-1ZR"/>
                             <constraint firstItem="aAa-v4-UkR" firstAttribute="top" secondItem="ucg-Qf-Xa7" secondAttribute="bottom" constant="30" id="Rzo-04-XWM"/>
+                            <constraint firstItem="e2b-kb-ylE" firstAttribute="top" secondItem="tgq-Xq-vjG" secondAttribute="top" constant="230" id="bqI-SO-a4J"/>
                             <constraint firstItem="aAa-v4-UkR" firstAttribute="leading" secondItem="tgq-Xq-vjG" secondAttribute="leading" constant="20" id="oDB-PV-CZH"/>
                             <constraint firstItem="ucg-Qf-Xa7" firstAttribute="leading" secondItem="tgq-Xq-vjG" secondAttribute="leading" id="ow3-IW-qnG"/>
                             <constraint firstItem="ucg-Qf-Xa7" firstAttribute="top" secondItem="tgq-Xq-vjG" secondAttribute="top" id="wP2-Q6-wZ8"/>
