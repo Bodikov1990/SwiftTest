@@ -38,6 +38,10 @@ class QuizViewController: UIViewController {
         resultVC.questionNumber = questionNumber
     }
     
+    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        restartQuiz()
+    }
+    
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == selectedAnswer {
             score += 1
@@ -71,12 +75,7 @@ class QuizViewController: UIViewController {
 }
 
 extension QuizViewController {
-//    private func alerts() {
-//        let alert = UIAlertController(title: "Круто", message: "Хотите повторить?", preferredStyle: .alert)
-//        let restartAction = UIAlertAction(title: "Рестарт", style: .default, handler: {action in self.restartQuiz()})
-//        alert.addAction(restartAction)
-//        present(alert, animated: true, completion: nil)
-//    }
+
     
     private func restartQuiz(){
         score = 0

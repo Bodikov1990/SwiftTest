@@ -9,60 +9,32 @@ import UIKit
 
 class QuizTableViewController: UITableViewController {
     
-    var allQuestions = Quizes.getQuestions()
+    var allQuestions: Quizes!
     
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        var sectionCounts: Int!
-        
-        for nameOfSections in allQuestions {
-            sectionCounts = nameOfSections.sections.count
-            
-        }
-        
-        return sectionCounts
+        allQuestions.sections.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var sectionName: String!
-        
-        for quizes in allQuestions {
-            sectionName = quizes.sections[section].sections
-        }
-        
-        return sectionName
+        allQuestions.sections[section].sections
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var rowCounts: Int!
-        
-        for sections in allQuestions {
-            for rows in sections.sections {
-                rowCounts = rows.rows.count
-            }
-        }
-        
-        return rowCounts
+        allQuestions.sections[section].rows.count
         
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "quizVC", for: indexPath)
         
-        var quiz: Rows!
-        
-        for quizes in allQuestions {
-            for sections in quizes.sections {
-                quiz = sections.rows[indexPath.row]
-                
-            }
-        }
+        let section = allQuestions.sections[indexPath.section]
+        let rows = section.rows[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
-        
-        content.text = quiz.rows
+        content.text = rows.rows
         
         cell.contentConfiguration = content
         
@@ -73,14 +45,10 @@ class QuizTableViewController: UITableViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             guard let quizVC = segue.destination as? QuizViewController else { return }
             
-            for quizes in allQuestions {
-                
-                for sectionName in quizes.sections {
-                    quizVC.rows = sectionName.rows[indexPath.row]
-                }
-            }
-            
+            let section = allQuestions.sections[indexPath.section]
+            quizVC.rows = section.rows[indexPath.row]
         }
     }
+    
     
 }

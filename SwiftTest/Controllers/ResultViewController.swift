@@ -24,9 +24,7 @@ class ResultViewController: UIViewController {
         
     }
 
-    @IBAction func restartAction() {
-        
-    }
+
     
     @IBAction func backActiona() {
         dismiss(animated: true) {}

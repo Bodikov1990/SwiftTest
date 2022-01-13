@@ -9,44 +9,45 @@ import UIKit
 
 class ResultsTableViewController: UITableViewController {
 
-    var quizes: [Quizes] = []
+    var allQuestions: Quizes!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        quizes.count
+        allQuestions.sections.count
     }
     
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-////        "\(quizes[section].nameOfSection)"
-//    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        allQuestions.sections[section].sections
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        quizes.count
+        allQuestions.sections[section].rows.count
+        
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultVC", for: indexPath)
-//        let quiz = quizes[indexPath.row]
-
         
-//        var content = cell.defaultContentConfiguration()
+        let section = allQuestions.sections[indexPath.section]
+        let rows = section.rows[indexPath.row]
         
-//        switch indexPath.row {
-//        case 0: content.text = quiz.nameOfQuiz
-//        default: content.text = quiz.nameOfSection
-//        }
+        var content = cell.defaultContentConfiguration()
+        content.text = rows.rows
         
-//        cell.contentConfiguration = content
-
+        cell.contentConfiguration = content
+        
         return cell
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            guard let quizVC = segue.destination as? QuizViewController else { return }
+            
+            let section = allQuestions.sections[indexPath.section]
+            quizVC.rows = section.rows[indexPath.row]
+        }
+    }
+    
 }

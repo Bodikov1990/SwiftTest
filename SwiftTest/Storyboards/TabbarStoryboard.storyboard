@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="quizVC" id="goR-n7-ApO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="quizVC" id="goR-n7-ApO">
                                 <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="goR-n7-ApO" id="ZkP-vr-peA">
@@ -93,7 +93,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="0fd-mb-GeR" kind="push" id="EeK-HC-5wu"/>
+                                    <segue destination="0fd-mb-GeR" kind="show" id="EeK-HC-5wu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -187,7 +187,7 @@
                         <outlet property="buttonD" destination="IiW-Jo-HWn" id="G8n-iZ-j8d"/>
                         <outlet property="progressBar" destination="ucg-Qf-Xa7" id="jXv-Wr-mU2"/>
                         <outlet property="questionLabel" destination="aAa-v4-UkR" id="1xH-EE-TuG"/>
-                        <segue destination="jS3-XW-D2D" kind="presentation" identifier="resultsVC" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="18e-2L-4xY"/>
+                        <segue destination="jS3-XW-D2D" kind="presentation" identifier="resultsVC" modalPresentationStyle="fullScreen" id="j49-hq-9ha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdj-FR-tzj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -209,17 +209,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxw-bK-6Kw">
-                                <rect key="frame" x="20" y="300" width="280" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Рестарт"/>
-                                <connections>
-                                    <action selector="restartAction" destination="jS3-XW-D2D" eventType="touchUpInside" id="LxW-3S-XPx"/>
-                                </connections>
+                                <rect key="frame" x="20" y="300" width="280" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Рестарт"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0J-kr-Oh3">
-                                <rect key="frame" x="20" y="361" width="280" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Назад"/>
+                                <rect key="frame" x="20" y="360" width="280" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Назад"/>
                                 <connections>
                                     <action selector="backActiona" destination="jS3-XW-D2D" eventType="touchUpInside" id="Pom-P7-Yjv"/>
                                 </connections>
@@ -255,7 +252,6 @@
                     <connections>
                         <outlet property="backButton" destination="a0J-kr-Oh3" id="Ow8-Yb-C2j"/>
                         <outlet property="quizLabel" destination="lwS-El-zkk" id="pS3-Ym-1no"/>
-                        <outlet property="restartButton" destination="hxw-bK-6Kw" id="ZdV-dT-03u"/>
                         <outlet property="resultLabel" destination="Eda-DT-765" id="K77-pF-0Oo"/>
                     </connections>
                 </viewController>
